@@ -7,25 +7,45 @@ package cavedweller;
 
 /**
  *
- * @author jword
+ * @author 803015
  */
 public class Cave {
-    double temp;
-    int size;
-    Caveman caveman;
-    Bat bat;
-    Key key;
-    Food food1;
-    Door door;
-    
-    public Cave() {
-        this.temp = Math.random() * 100;
-        this.size = (int) (Math.random() * 11) + 6;
-        this.caveman = new Caveman("Grog",(int)(Math.random() * this.size),(int)(Math.random() * this.size));
+    private double temp;
+    private int size, amount;
+    private Bat bat;
+    private Caveman caveman;
+    private Key key;
+    private Food food1;
+    private Door door;
+    public Cave (){
+        this.temp = Math.random()  * 100;
+        this.size = (int) (Math.random () *11) + 6;
+        //instantiate 
+        this.caveman = new Caveman ("Grog", (int) (Math.random() * this.size),(int) Math.random());
+        this.food1 = new Food ("Meat", (int) (Math.random()* this.amount), (int) Math.random());
     }
-    
-    public String toString() {
-        return ""+size;
+   public void handleInput(String input){
+   if(input.trim().equalsIgnoreCase("up")){
+        caveman.moveUp();
+   }
+        else if(input.trim().equalsIgnoreCase("down")) {
+            caveman.moveDown();    
+        }
+        else if(input.trim().equalsIgnoreCase("left")) {
+        caveman.moveLeft();
+        }
+        else if(input.trim().equalsIgnoreCase("right")) {
+        caveman.moveRight();
+        }
+        else if(input.trim().equalsIgnoreCase("close")) {
+        System.exit(0);
+        
+   }
+   else {
+        System.out.println("(command not valid)");
+                }
+   System.out.println(caveman.toString());
+    public String toString(){
+    return ""+size;
     }
-    
 }
