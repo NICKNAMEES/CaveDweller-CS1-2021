@@ -22,9 +22,9 @@ public class CaveDweller {
         System.out.println (cave.toString());
         System.out.println(cave.toString());
         Scanner kboard = new Scanner(System.in);
-        String int "";
+        String input = "";
         while (!input.equals("close")){
-        String input = kboard.nextLine();
+        input = kboard.nextLine();
         cave.handleInput(input);
     }
     }

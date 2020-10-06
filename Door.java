@@ -7,8 +7,23 @@ package cavedweller;
 
 /**
  *
- * @author jword
+ * @author 803015
  */
+
 public class Door {
-    
+private int x, y;
+public Door (int x, int y){
+    this.x = x;
+    this.y = y;
+}
+
+    public int getX() {
+        return x;
+    }
+
+
+    public int getY() {
+        return y;
+ 
+    }
 }
